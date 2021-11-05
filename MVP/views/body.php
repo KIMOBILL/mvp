@@ -14,7 +14,6 @@
                     </a>
                     <a href="panel.php" class="header__link">
                         <i class='bx bx-bell header__icon' ></i>
-                           
                     </a>
                 </div>                
                 <div class="header__toggle">                    

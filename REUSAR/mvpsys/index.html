@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
+        <title>MVP SYSTEM KIMOBILL</title>
+        <link rel="shortcut icon" href="layout2/img/kimobill.png">
+        <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="layout2/css/login.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
+
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="layout/js/validaciones.js" type="text/javascript"></script>
+        <script src="layout/jquery/login.js" type="text/javascript"></script>
+        <style type="text/css">
+            #divlogin {
+                width: 400px;
+                height: 600px;
+                margin-top: -280px;
+                margin-left: -200px;
+                left: 50%;
+                top: 50%;
+                position: absolute;
+            }
+        </style>
+    </head>
+
+    <body style="font-family: 'Josefin Sans', sans-serif; background-color:#FFFFFF">
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content" style="background-color:#F5F9FA">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel" style="color:#076198"><b>REGISTRATE</b></h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">                   
+                                <div class="col-lg-4 col-md-6 ms-auto">
+                                    <label for="txtNom" class="form-label"><b>NOMBRE DE LA EMPRESA(*)</b></label>
+                                    <input type="text" class="form-control" name="txtNom" id="txtNom" placeholder="Nombre de la Empresa" pattern="{4,50}" onkeypress="return ValidarLetras(event);" onKeyUp="this.value = this.value.toUpperCase();"/>
+                                </div>                        
+                                <div class="col-lg-4 col-md-6 ms-auto">
+                                    <label for="txtDir" class="form-label"><b>DIRECCION DE LA EMPRESA(*)</b></label>
+                                    <input type="text" class="form-control" name="txtDir" id="txtDir" placeholder="Direccion"/>
+                                </div>                                
+                                <div class="col-lg-4 col-md-6 ms-auto">
+                                    <label for="txtMail" class="form-label"><b>CORREO ELECTRONICO (*)</b></label>
+                                    <input type="email" class="form-control" name="txtMail" id="txtMail" placeholder="Correo Electronico" onKeyUp="this.value = this.value.toLowerCase();"/>
+                                </div>
+                                <div class="col-lg-4 col-md-6 ms-auto">
+                                    <label for="txtNom1" class="form-label"><b>WEB INSTITUCIONAL (*)</b></label>
+                                    <input type="text" class="form-control" name="txtWeb" id="txtWeb" placeholder="Web Institucional" pattern="{4,50}" onKeyUp="this.value = this.value.toLowerCase();"/>
+                                </div> 
+                                <div class="col-lg-4 col-md-6 ms-auto">
+                                    <label for="txtUser" class="form-label"><b>USUARIO O NICK (*)</b></label>
+                                    <input type="text" class="form-control" name="txtUser" id="txtUser" placeholder="Usuario o Nick"/>
+                                </div>
+                                <div class="col-lg-4 col-md-6 ms-auto">
+                                    <label for="txtPass1" class="form-label"><b>INGRESAR PASSWORDS (*)</b></label>
+                                    <input type="password" class="form-control" name="txtPass1" id="txtPass1" placeholder="Passwords"/>
+                                </div>
+                                <div class="col-lg-4 col-md-6 ms-auto">
+                                    <label for="txtPass2" class="form-label"><b>REPETIR PASSWORDS (*)</b></label>
+                                    <input type="password" class="form-control" name="txtPass2" id="txtPass2" placeholder="Repetir Passwords"/>
+                                </div>
+                                <div class="col-lg-4 col-md-6 ms-auto"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-primary" title="GUARDAR REGISTRO" onclick="Verificar();">
+                            <img src="layout/img/guardar.png"  width="25" height="25">
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary" title="CANCELAR ACCION" onclick="salirmodal();">
+                            <img src="layout/img/salir.png"  width="25" height="25">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- comment -->
+
+        <div class="container">
+            <div id="divlogin" class="border border-info border-5 rounded-3 text-center" style="width: 400px; height:530px; background-color:#FFFFFF">
+                <center>
+                    <img src="layout/imglogin/0.png" id="imagenlogin" name="imagenlogin"> 
+                </center>
+                <br>
+                <h5>Bienvenido al Sistema de Encuestas</h5>
+                <br>
+                <div class="container">
+                    <div class="container">
+                        <div class="form-group">                        
+                            <input type="text" name="txtUser1" id="txtUser1" class="form-control" placeholder="User/Usuario" onKeyUp="usuario(this);" onfocus="usuario(this);">
+                        </div>
+                        <div class="form-group">                        
+                            <input type="password" name="txtPass" id="txtPass" class="form-control" placeholder="***********" onkeypress="valKey(event);" onKeyUp="password();" onfocus="password();">
+                        </div><br>
+                    </div>                    
+                </div>
+                <div class="container">
+                    <input name="login" id="login" class="btn btn-outline-primary mb-4" type="button" value="Iniciar Sesion" onclick="Ingresar();"><br>
+                    <a href="#!" class="forgot-password-link" onclick="abrirmodal();">REGISTRATE AHORA </a>
+                </div>    
+
+
+
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    </body>
+</html>

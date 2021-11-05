@@ -1,0 +1,25 @@
+<?php
+session_start();
+if(isset($_SESSION['IdUser'])){
+    unset($_SESSION['IdUser']);
+}
+if(isset($_SESSION['IdRol'])){
+    unset($_SESSION['IdRol']);
+}
+if(isset($_SESSION['Rol'])){
+    unset($_SESSION['Rol']);
+}
+if(isset($_SESSION['Nombres'])){
+    unset($_SESSION['Nombres']);
+}
+if(isset($_SESSION['IdEmp'])){
+    unset($_SESSION['IdEmp']);
+}
+if(isset($_SESSION['Empresa'])){
+    unset($_SESSION['Empresa']);
+}
+if(isset($_SESSION['Web'])){
+    unset($_SESSION['Web']);
+}
+session_destroy();
+header('location: index.html');
