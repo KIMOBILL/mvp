@@ -69,9 +69,11 @@ $data = ejecutarJson('SELECT * FROM mvp.data;');
         }));
     });
     select[4].forEach(element => {
-        $('#indicadorSelect').append($('<option />', {
-            text: element,
-            value: element,
-        }));
+        if (element != 'RECOMENDACIÓN' && element != 'SATISFACCION GENERAL' && element != 'ESFUERZO') {
+            $('#indicadorSelect').append($('<option />', {
+                text: element,
+                value: element,
+            }));
+        }
     });
 </script>

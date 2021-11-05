@@ -69,11 +69,23 @@ $data = ejecutarJson('SELECT * FROM mvp.data;');
         }));
     });
     select[4].forEach(element => {
-        console.log(element);
-        /*
-        $('#indicadorSelect').append($('<option />', {
-            text: element,
-            value: element,
-        }));*/
+        if (element == 'RECOMENDACIÓN') {
+            $('#indicadorSelect').append($('<option />', {
+                text: 'NPS',
+                value: element,
+            }));
+        }
+        if (element == 'SATISFACCION GENERAL') {
+            $('#indicadorSelect').append($('<option />', {
+                text: 'INS',
+                value: element,
+            }));
+        }
+        if (element == 'ESFUERZO') {
+            $('#indicadorSelect').append($('<option />', {
+                text: 'CES',
+                value: element,
+            }));
+        }
     });
 </script>
